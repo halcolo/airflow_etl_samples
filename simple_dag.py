@@ -16,7 +16,6 @@ default_args = {
     'email_on_retry': False,
     'retries': 1,
     'retry_delay': timedelta(minutes=5),
-  
 # 2 - Dag creation
 with DAG(
   'Simple Dag',
@@ -27,18 +26,21 @@ with DAG(
   tags=['example'],
 ) as dag:
   
-# 3 - Task
-t1 = BashOperator(
-    task_id='print_date',
-    bash_command='date',
-)
+    # 3 - Task
+    t1 = BashOperator(
+        task_id='print_date',
+        bash_command='date',
+    )
 
-t2 = BashOperator(
-    task_id='sleep',
-    depends_on_past=False,
-    bash_command='sleep 5',
-    retries=3,
-)
+    t2 = BashOperator(
+        task_id='sleep',
+        depends_on_past=False,
+        bash_command='sleep 5',
+        retries=3,
+    )
  
 # 4 - WORKFLOW
 t1 >> t2
+
+if __name__ == "__main__":
+    dag.cli()
