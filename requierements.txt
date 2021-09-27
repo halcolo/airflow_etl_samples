@@ -1,0 +1,3 @@
+jupyterlab==3.1.13
+great-expectations==0.13.35
+pyspark==3.1.2
