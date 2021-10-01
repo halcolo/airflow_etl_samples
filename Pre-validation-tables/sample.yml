@@ -1,0 +1,9 @@
+# GS path to raw data
+source: gs://notebooks_sample_datasets_jda/github_nested.csv
+validation: nullValidation
+id: None 
+columns:
+    - INDUS
+    - NOX
+    - RM
+    
