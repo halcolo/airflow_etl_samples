@@ -1,5 +1,5 @@
 # GS path to raw data
-source: gs://notebooks_sample_datasets_jda/github_nested.csv
+source: ../data/realStateDataset.csv
 validation: nullValidation
 id: None 
 columns:
